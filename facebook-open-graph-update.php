@@ -135,7 +135,6 @@ class FacebookOpenGraphUpdate {
 
 	public function get_access_token() {
 		$access_token = get_option( 'facebook-open-graph-update-access-token', '' );
-
 		return $access_token;
 	}
 }

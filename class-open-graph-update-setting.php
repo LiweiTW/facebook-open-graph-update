@@ -21,7 +21,7 @@ function FacebookOpenGraphUpdateSettingInit() {
 		'facebook-open-graph-update-setting'
 	);
 
-	register_setting( 'facebook_open_graph_update', 'facebook-open-graph-update-access-token' );
+	register_setting( 'writing', 'facebook-open-graph-update-access-token' );
 }
 
 add_action( 'admin_init', 'FacebookOpenGraphUpdateSettingInit' );
@@ -31,7 +31,8 @@ function FacebookOpenGraphUpdateSettingLabelFunction() {
 }
 
 function FacebookOpenGraphUpdateSettingInputFunction() {
-	echo '<input name="facebook-open-graph-update-access-token" id="facebook-open-graph-update-access-token" type="password">';
+	$access_token = get_option( 'facebook-open-graph-update-access-token', '' );
+	echo '<input name="facebook-open-graph-update-access-token" id="facebook-open-graph-update-access-token" type="password" value="' . $access_token . '">';
 }
 
 ?>
